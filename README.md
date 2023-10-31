@@ -14,15 +14,21 @@ This is a simple project in go related with lambda - Below is a brief explanatio
 ## How Test the lambda function
 
 1. Install the sam cli
-2. Create a SAM project for your lambda function
-3. Build the lambda function
+    ```bash
+    $ pip install --user aws-sam-cli
+    ```
+2. Create a SAM project for your lambda function in go
+    ```bash 
+    $ sam init --runtime go1.x --name your-project-name
+    ```
+3. Build the lambda function 
+    ```bash
+    $ sam build
+    ```
 4. Invoke the lambda function
-
-### Install the sam cli
-
-```bash
-$ pip install --user aws-sam-cli
-```
+    ```bash
+    $ sam local start-api
+    ```
 
 ## Requirements
 
@@ -62,7 +68,7 @@ Events:
     HelloWorld:
         Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
         Properties:
-            Path: /hello
+            Path: /gacrux
             Method: get
 ```
 
